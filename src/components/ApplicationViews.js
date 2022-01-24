@@ -9,8 +9,10 @@ export const ApplicationViews = () => {
             <Route path="home/*" />
             <Route path="theme/create/*" />
             <Route path="name/create/*" />
-            <Route path="edit/:userInputId/*" />
-            <Route path=""
+
         </Routes>
     )
 }
+
+{/* <Route path="edit/:userInputId/*" />
+            <Route path=""/> */}
