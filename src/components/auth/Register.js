@@ -8,13 +8,13 @@ import { Form, Button, Row, Col, Image } from 'react-bootstrap';
 export const Register = (props) => {
     const firstName = useRef()
     const lastName = useRef()
-    const email = useRef()
+    const userName = useRef()
     const verifyPassword = useRef()
     const conflictDialog = useRef()
     const navigate = useNavigate()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/users?email=${email.current.value}`)
+        return fetch(`http://localhost:8088/users?userName=${userName.current.value}`)
             .then(res => res.json())
             .then(user => !!user.length)
     }
@@ -32,7 +32,7 @@ export const Register = (props) => {
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
-                            email: email.current.value,
+                            userName: userName.current.value,
                             firstName: `${firstName.current.value}`,
                             lastName: `${lastName.current.value}`
                         })
@@ -85,9 +85,9 @@ export const Register = (props) => {
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row}>
-                    <Form.Label column sm="2" htmlFor="inputEmail"> Email address </Form.Label>
+                    <Form.Label column sm="2" htmlFor="inputUsername"> User Name </Form.Label>
                     <Col sm="10">
-                    <Form.Control ref={email} type="email" name="email" className="mb-3 form-control" placeholder="Email address" required />
+                    <Form.Control ref={userName} type="userName" name="userName" className="mb-3 form-control" placeholder="userName" required />
                     </Col>
                     <Form.Text className="mb-3 text-muted"> We'll never share your information with anyone else </Form.Text>
                 </Form.Group>

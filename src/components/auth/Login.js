@@ -6,14 +6,14 @@ import "./Login.css"
 import { Row, Col, Image, Form, Button, Modal, Container } from 'react-bootstrap';
 
 export const Login = (props) => {
-    const email = useRef()
+    const userName = useRef()
     const password = useRef()
     const existDialog = useRef()
 
     const navigate = useNavigate() //now needs to be navigate and useNaviagte()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/users?email=${email.current.value}`)
+        return fetch(`http://localhost:8088/users?userName=${userName.current.value}`)
             .then(res => res.json())
             .then(user => user.length ? user[0] : false)
     }
@@ -51,12 +51,12 @@ export const Login = (props) => {
                                 
                                 <h2>Please sign in</h2>
                                 <Form.Group as={Row}>
-                                    <Form.Label sm="2" htmlFor="inputEmail"> Email address </Form.Label>
+                                    <Form.Label sm="2" htmlFor="inputEmail"> User Name </Form.Label>
                                     <Col sm="10">
-                                    <Form.Control ref={email} type="email"
-                                        id="email"
+                                    <Form.Control ref={userName} type="userName"
+                                        id="userName"
                                         className="mb-3 form-control"
-                                        placeholder="Email address"
+                                        placeholder="User Name"
                                         required autoFocus /></Col>
                                 </Form.Group>
                                     <Button className="mb-3" variant="success" type="submit">

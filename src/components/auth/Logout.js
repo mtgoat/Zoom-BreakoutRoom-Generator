@@ -8,7 +8,7 @@ import { Form, Button, Row, Col, Image } from 'react-bootstrap';
 
 export const Logout = (props) =>{
     const navigate = useNavigate()
-    const email = useRef()
+    const userName = useRef()
     const existDialog = useRef()
 
     const handleLogout = (e) => {
