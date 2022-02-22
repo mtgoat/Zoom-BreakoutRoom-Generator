@@ -1,16 +1,27 @@
 //purpose: to decide what happens at each url 
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./Home";
+
+import { UserProvider } from "./users/UserProvider";
+import { ThemeProvider } from "./themes/ThemeProvider";
+import { MoodProvider } from "./moods/MoodProvider";
+import { ThemeList } from "./themes/ThemeList";
+
 
 export const ApplicationViews = () => {
     return (
-        <Routes>
-            <Route path="home/*" />
-            <Route path="theme/create/*" />
-            <Route path="name/create/*" />
+        <ThemeProvider> 
+            <MoodProvider>
+                <UserProvider>
+                    <Routes>
+                        <Route path="/" element={<ThemeList />} />
+                        <Route path="theme/create/*" />
+                        {/* <Route path="name/create/*" /> */}
 
-        </Routes>
+                    </Routes>
+                </UserProvider>
+            </MoodProvider>
+        </ThemeProvider>
     )
 }
 
