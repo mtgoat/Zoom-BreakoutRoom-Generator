@@ -29,7 +29,7 @@ export const ThemeGenerator = (props) => {
     
     const radomThemeId = Math.floor(Math.random() * unExThLength);
     
-    const randomTheme = unExthemes.find (u => u.id === radomThemeId)
+    const randomTheme = unExthemes.find(u => u.id === radomThemeId)
 
      console.log(randomTheme);
 
@@ -77,7 +77,7 @@ const handleClose = () => setShow(false);
         </Button>
         <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title>Theme Title: {randomTheme.themeTitle}</Modal.Title>
+          <Modal.Title>Theme Title: {randomTheme?.themeTitle}</Modal.Title>
         </Modal.Header>
         <Modal.Body>Theme info</Modal.Body>
         <Modal.Footer>
