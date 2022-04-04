@@ -3,7 +3,8 @@ import { useNavigate} from "react-router"
 import { ThemeContext } from "./ThemeProvider";
 import {ThemeCard} from "./ThemeCard";
 import "./Theme.css"
-import { Table } from "react-bootstrap";
+import { ThemeGenerator } from "./ThemeGenerator";
+import { Accordion, Button } from "react-bootstrap";
 
 
 export const ThemeList = (props) => {
@@ -20,29 +21,20 @@ export const ThemeList = (props) => {
     
   
   return (
-  
-        <div className="themeList">
-            <Table responsive striped bordered className="themeList__table">
-                <thead >
-                    <tr>
-                        <th>Theme  </th>
-                        <th>Description</th>
-                        <th>Mood</th>
-                        {/* <th>Example</th> */}
-                        <th>Completed</th>
-                    </tr>
-    
-    
-                </thead>
-                
-         {
-                themes.map(themeObj => {
-              return <ThemeList key={themeObj.id} theme={themeObj} />
-         })
-        }
-            </Table>
+  <>
+        <div className="container">
+            <h3 className="themeList__table"> List of Themes </h3 >
+                <div className="row justify-content-center">
+                    <div className="col-sm-10 col-lg-10">
+                        <Accordion defaultActiveKey="0">
+                        {themes.map((themeObj) => (
+                            <ThemeCard key={themeObj.id} theme={themeObj} />
+                            ))}
+                        </Accordion>
+                    </div>
+                </div>
         </div> 
-      
+        </> 
   )
 }
 

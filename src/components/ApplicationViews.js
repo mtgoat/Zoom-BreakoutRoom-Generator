@@ -6,7 +6,8 @@ import { UserProvider } from "./users/UserProvider";
 import { ThemeProvider } from "./themes/ThemeProvider";
 import { MoodProvider } from "./moods/MoodProvider";
 import { ThemeList } from "./themes/ThemeList";
-
+import { ThemeForm } from "./themes/ThemeForm";
+import { ThemeGenerator } from "./themes/ThemeGenerator";
 
 export const ApplicationViews = () => {
     return (
@@ -15,8 +16,8 @@ export const ApplicationViews = () => {
                 <UserProvider>
                     <Routes>
                         <Route path="/" element={<ThemeList />} />
-                        <Route path="theme/create/*" />
-                        {/* <Route path="name/create/*" /> */}
+                        <Route path="theme/create/*" element={<ThemeForm/>} />
+                        <Route path="/generator" element={<ThemeGenerator />} /> 
 
                     </Routes>
                 </UserProvider>
