@@ -16,11 +16,11 @@ class NavBar extends Component{
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto">
                     
-                    <Nav.Link className="Nav1" href="/">Generator</Nav.Link>
-                    <Nav.Link href="/">Add Theme</Nav.Link>
+                    <Nav.Link className="Nav1" href="/generator">Generator</Nav.Link>
+                    <Nav.Link href="theme/create/*">Add Theme</Nav.Link>
                     {/* <Nav.Link href="/">Add Name</Nav.Link> */}
                     {/* <Nav.Link href="/">Add Mood</Nav.Link> */}
-                    <Nav.Link href="#">View all</Nav.Link>
+                    <Nav.Link href="/">View all</Nav.Link>
                     <Nav.Link href="/search">Search</Nav.Link>
                    
                     
