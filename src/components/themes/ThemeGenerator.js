@@ -79,7 +79,7 @@ const handleClose = () => setShow(false);
         <Modal.Header closeButton>
           <Modal.Title>Theme Title: {randomTheme?.themeTitle}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Theme info</Modal.Body>
+        <Modal.Body>Theme info: {randomTheme?.Description}</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
